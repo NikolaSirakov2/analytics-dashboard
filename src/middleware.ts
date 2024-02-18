@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
+import { analytics } from "./utils/analytics";
 
 export default async function middleware(req: NextRequest) {
     if(req.nextUrl.pathname === "/") {
         console.error("Redirecting to /home");
         try{
-            analythics.track("pageview", {
+            analytics.track("pageview", {
                 page: "/",
                 countrry: req.geo?.country,
             });
