@@ -1,3 +1,4 @@
+import AnalyticsDashboard from "@/components/AnaliticsDashboard";
 import { analytics } from "@/utils/analytics";
 
 const Page = async () => {
