@@ -4,7 +4,7 @@ import { analytics } from "@/utils/analytics";
 const Page = async () => {
     const TRACKING_DAYS = 7;
 
-    const pageview = await analytics.retriveDays("pageview", 7);
+    const pageview = await analytics.retriveDays("pageview", TRACKING_DAYS);
 
     const totalPageViews = pageview.reduce((acc, cur) => {
         return (
@@ -22,6 +22,8 @@ const Page = async () => {
         },
         0
     );
+
+    const topCountriesMap = new Map<string, number>();
 
     return (
         <div className="min-h-screen w-full py-12 flex justify-center items-center">
